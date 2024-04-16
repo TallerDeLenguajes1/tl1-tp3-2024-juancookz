@@ -5,11 +5,13 @@
 #define COLS 12
 void cargarMatriz(int *matriz, int filas, int columnas);
 void mostrarMatriz(int matriz[FILAS][COLS]);
+void promedioAnual(int matriz[FILAS][COLS]);
 int main()
 {
     int matriz[FILAS][COLS];
     cargarMatriz(&(matriz[0][0]), FILAS, COLS);
     mostrarMatriz(matriz);
+    promedioAnual(matriz);
     return 0;
 }
 void cargarMatriz(int *matriz, int filas, int columnas)
@@ -34,6 +36,24 @@ void mostrarMatriz(int matriz[FILAS][COLS])
         {
             printf("%d|", matriz[i][j]);
         }
+        printf("\n");
+    }
+}
+void promedioAnual(int matriz[FILAS][COLS]){
+    int anio = 2025;
+    float promedio;
+    printf("\nPromedio de ganancias por anio:\n");
+    for (int i = 0; i < FILAS; i++)
+    {
+        printf("%d: ", anio);
+        for (int j = 0; j < COLS; j++)
+        {
+             promedio += matriz[i][j];
+        }
+        promedio = promedio/COLS;
+        printf("%.1f", promedio);
+        anio++;
+        promedio = 0;
         printf("\n");
     }
 }
