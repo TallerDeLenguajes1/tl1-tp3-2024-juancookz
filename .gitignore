@@ -23,3 +23,4 @@ build/
 *.user
 *.sln.docstates
 tp3_2
+.DS_Store
